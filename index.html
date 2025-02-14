@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Valentine's Adventure</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/SplitText.min.js"></script>
+</head>
+<body>
+    <div class="Loafcontainer">
+        <svg width="500px" height="250px" viewBox="0 0 800 300">
+            <g>
+            <path d="M237.419957,75.8697697 C235.636928,74.1661331 234.526246,71.7647486 234.526246,69.1039505 C234.526246,63.9365393 238.715261,59.7475248 243.882672,59.7475248 C246.479774,59.7475248 248.829734,60.8056668 250.524949,62.5143483 C252.186021,61.0065549 254.391488,60.0877585 256.811551,60.0877585 C261.978962,60.0877585 266.167976,64.2767729 266.167976,69.4441841 C266.167976,71.9507972 265.182286,74.22719 263.57737,75.9068984 L263.712083,76.0416118 L250.480099,89.2735958 L237.248115,76.0416118 L237.419957,75.8697697 Z" id="Heart" fill="#FF096D"></path>
+        </g>
+    </svg>
+        <i class="fa-solid fa-heart"></i>
+        <div class="bread">
+            <div class="bottom"></div>
+            <div class="leg"> </div>
+        </div>
+        <div class="jam">
+            <div class="lid"></div>
+            <div class="label">
+                <div class="strawberry"></div>
+                <div class="hand"></div>
+            </div>
+        </div>
+        <h3>I loaf you berry much!</h3>
+    </div>
+    <h1 class="valentine-title">Happy Valentine's Day, My Love!</h1>
+    
+    <div id="start-stage" class="stage">
+        <div class="message-content">
+            <div class="hearts">
+                <div class="heartOne">
+                    <div class="left-side"></div>
+                    <div class="right-side"></div>
+                </div>
+            </div>
+            <p class="love-text2">Ready for a Valentine's quest?&nbsp;&nbsp;&nbsp;</p>
+            <button id="start-game" class="cute-button">Let's go! ❤️</button>
+            <!-- <div id='heart' class='heartbutton'></div> -->
+        </div>
+    </div>
+
+    <div id="wordle-game" class="stage hidden">
+        <div class="container">
+            <h1>Love Word Puzzle</h1>
+            <div id="board-container">
+                <div id="board"></div>
+                <div id="keyboard" class="keyboard"></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="jumbled-letter" class="stage hidden">
+        <div class="container">
+            <h1>Our classic dialogue!</h1>
+            <p class="puzzle-instruction">Drag and rearrange the words to reveal the hidden message! 📨</p>
+            <div id="words-container" class="words-container">
+            </div>
+            <button id="check-answer" class="cute-button">Check My Answer 💖</button>
+        </div>
+    </div>
+
+    <div id="date-game" class="stage hidden">
+        <div class="container">
+            <h1>Our Special Day ❤️</h1>
+            <p class="puzzle-instruction">When did OJ and TJ start to date?</p>
+            <div class="date-picker-container">
+                <div class="fancy-date-picker">
+                    <div class="date-display">
+                        <span class="selected-date">Pick our special day</span>
+                        <div class="date-icon">✨</div>
+                    </div>
+                    <div class="calendar-dropdown hidden">
+                        <div class="calendar-header">
+                            <button class="nav-btn prev-month"> Prev </button>
+                            <span class="current-month"></span>
+                            <button class="nav-btn next-month"> Next </button>
+                        </div>
+                        <div class="weekdays">
+                            <span>Sun</span>
+                            <span>Mon</span>
+                            <span>Tue</span>
+                            <span>Wed</span>
+                            <span>Thu</span>
+                            <span>Fri</span>
+                            <span>Sat</span>
+                        </div>
+                        <div class="calendar-grid"></div>
+                        <input type="hidden" id="special-date">
+                    </div>
+                </div>
+            </div>
+            <button id="check-date" class="cute-button">Let's check!</button>
+        </div>
+    </div>
+
+    <div id="love-message" class="stage hidden">
+        <!-- <div class="floating-hearts"></div> -->
+        <br><br>
+        <div class="message-content">
+            <div class="hearts">
+                <div class="heartOne">
+                    <div class="left-side"></div>
+                    <div class="right-side"></div>
+                </div>
+                <div class="heartTwo">
+                    <div class="left-side"></div>
+                    <div class="right-side"></div>
+                </div>
+                <div class="heartThree">
+                    <div class="left-side"></div>
+                    <div class="right-side"></div>
+                </div>
+                <div class="heartFour">
+                    <div class="left-side"></div>
+                    <div class="right-side"></div>
+                </div>
+            </div>
+            <h2>Love you Ojju! </h2>
+            <div class="love-image-container">
+                <img src="https://lh3.googleusercontent.com/cnnKCPxN9zPGt87k7fJARR7sgxuQTe-BcXboLA4v5hpFOKHo1SeM2iH7XNjonehT4bDDSkQqFEhJ-givMF-bFtrh6WGrbcrw0fjmDrOq=s0" alt="Love Image" class="love-image">
+            </div>
+            <p class="love-text">You’re my sunshine on a cloudy day<br>
+                My favorite laugh, my favorite stay.<br>
+                With you, life’s a little more bright,<br>
+                A little more fun, and just feels right!</p>
+            <button id="start-wordle" class="cute-button">Let's go down the memory lane!</button>
+        </div>
+    </div>
+
+    <div id="memory-gallery" class="stage hidden">
+        <div class="gallery-container">
+            <div class="memory-image">
+                <img id="current-memory" alt="Memory">
+            </div>
+        </div>
+    </div>
+    <div id="Eggcontainer">
+        <svg width="500px" height="250px" viewBox="0 0 500 250">
+            <g id="BG" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <rect fill x="0" y="0" width="500" height="250"></rect>
+                <ellipse id="EggShade" fill="#000" cx="190" cy="234.5" rx="60" ry="3.5"></ellipse>
+              
+                <g id="egg-overall">
+                  <path d="M188,233 C222.241654,233 250,205.39507 250,171.342664 C250,137.290257 221.529011,83 187.287356,83 C153.045702,83 126,137.290257 126,171.342664 C126,205.39507 153.758346,233 188,233 Z" id="EggContainer" fill="#FFFFFF"></path>
+                  <path d="M191.5,233 C223.808658,233 250,207.051366 250,175.042104 C250,143.032842 223.136244,92 190.827586,92 C158.518928,92 133,143.032842 133,175.042104 C133,207.051366 159.191342,233 191.5,233 Z" id="EggContainerShade" fill="#F4F2F2"></path>
+                  <circle id="EggYolk" fill="#FFE000" cx="196.5" cy="175.5" r="37.5"></circle>
+                  <circle id="EggBlush1" fill="#FF7E00" cx="199.5" cy="172.5" r="2.5"></circle>
+                  <circle id="EggBlush2" fill="#FF7E00" cx="225.5" cy="172.5" r="2.5"></circle>
+                  <circle id="EggLeftEye" fill="#0D0D0D" cx="204.5" cy="165.5" r="2.5"></circle>
+                  <circle id="EggRightEye" fill="#0D0D0D" cx="217.5" cy="165.5" r="2.5"></circle>
+                  <path d="M206,173 C206,175.209139 208.686292,177 212,177 C215.313708,177 218,175.209139 218,173" id="EggMouth" fill="#000000"></path>
+                  <ellipse id="EggTongue" stroke="#FF7E00" fill="#FF7E00" cx="212" cy="175.5" rx="2" ry="1"></ellipse>
+                </g>
+              
+                <ellipse id="AvocadoShade" fill="#000" cx="314" cy="235.5" rx="60" ry="3.5"></ellipse>
+                <g id="avocado-overall">
+      
+                  <path d="M318,234 C352.241654,234 380,206.39507 380,172.342664 C380,138.290257 351.529011,84 317.287356,84 C283.045702,84 256,138.290257 256,172.342664 C256,206.39507 283.758346,234 318,234 Z" id="AvocadoContainer" fill="#A2FF51"></path>
+                  <path d="M314.5,234 C347.360943,234 374,207.6833 374,175.220006 C374,142.756712 346.677035,91 313.816092,91 C280.955149,91 255,142.756712 255,175.220006 C255,207.6833 281.639057,234 314.5,234 Z" id="AvocadoShade" fill="#91E845"></path>
+                  <path d="M310.5,232 C340.599519,232 365,208.075728 365,178.563642 C365,149.051556 339.973082,102 309.873563,102 C279.774044,102 256,149.051556 256,178.563642 C256,208.075728 280.400481,232 310.5,232 Z" id="AvocadoShade-Two" fill="#8AD748"></path>
+                  <circle id="AvocadoSeed" fill="#D28C00" cx="310.5" cy="176.5" r="37.5"></circle>
+                  <circle id="AvocadoSeed-Copy" fill="#EA9C01" cx="308" cy="177" r="35"></circle>
+                  <circle id="AvocadoBlush1" fill="#FF7E00" cx="280.5" cy="175.5" r="2.5"></circle>
+                  <circle id="AvocadoBlush2" fill="#FF7E00" cx="306.5" cy="175.5" r="2.5"></circle>
+                  <circle id="AvocadoLeftEye" fill="#0D0D0D" cx="285.5" cy="168.5" r="2.5"></circle>
+                  <circle id="AvocadoRightEye" fill="#0D0D0D" cx="298.5" cy="168.5" r="2.5"></circle>
+                  <path d="M287,176 C287,178.209139 289.686292,180 293,180 C296.313708,180 299,178.209139 299,176" id="AvocadoMouth" fill="#000000"></path>
+                  <ellipse id="AvocadoTongue" stroke="#FF7E00" fill="#FF7E00" cx="293" cy="178.5" rx="2" ry="1"></ellipse>
+                </g>
+                <path d="M237.419957,75.8697697 C235.636928,74.1661331 234.526246,71.7647486 234.526246,69.1039505 C234.526246,63.9365393 238.715261,59.7475248 243.882672,59.7475248 C246.479774,59.7475248 248.829734,60.8056668 250.524949,62.5143483 C252.186021,61.0065549 254.391488,60.0877585 256.811551,60.0877585 C261.978962,60.0877585 266.167976,64.2767729 266.167976,69.4441841 C266.167976,71.9507972 265.182286,74.22719 263.57737,75.9068984 L263.712083,76.0416118 L250.480099,89.2735958 L237.248115,76.0416118 L237.419957,75.8697697 Z" id="Heart" fill="#FF096D"></path>
+            </g>
+        </svg>
+      
+        <div id="text-wrapper">
+          Perfect or what?
+        </div>
+      </div>
+
+    <div id="text-wrapper2">Lives :</div>
+    <div id="lives-display" class="lives-container">
+        <div class="heart-life">
+            <svg viewBox="0 0 32 32">
+                <path d="M16,28.261c0,0-14-7.926-14-17.046c0-8.565,9.333-11.816,14-4.399c4.667-7.417,14-4.167,14,4.399 C30,20.335,16,28.261,16,28.261z" />
+            </svg>
+        </div>
+        <div class="heart-life">
+            <svg viewBox="0 0 32 32">
+                <path d="M16,28.261c0,0-14-7.926-14-17.046c0-8.565,9.333-11.816,14-4.399c4.667-7.417,14-4.167,14,4.399 C30,20.335,16,28.261,16,28.261z" />
+            </svg>
+        </div>
+        <div class="heart-life">
+            <svg viewBox="0 0 32 32">
+                <path d="M16,28.261c0,0-14-7.926-14-17.046c0-8.565,9.333-11.816,14-4.399c4.667-7.417,14-4.167,14,4.399 C30,20.335,16,28.261,16,28.261z" />
+            </svg>
+        </div>
+    </div>
+
+    <div id="wordle-game" class="stage hidden">
+        <div class="container">
+            <h1>Love Puzzle Woohoo!</h1>
+            <div id="game-board"></div>
+            <div id="keyboard"></div>
+        </div>
+    </div>
+
+
+    <div id="jumbled-letter" class="stage hidden">
+        <div class="container">
+            <h1>Our classic dialogue!</h1>
+            <p class="puzzle-instruction">Drag and rearrange the words to reveal the hidden message! 💌</p>
+            <div id="words-container" class="words-container">
+            </div>
+            <button id="check-answer" class="cute-button">Check My Answer 💝</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
