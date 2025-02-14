@@ -1114,8 +1114,8 @@ h3{
 }
 
 .memory-image {
-    width: 80vmin;
-    height: 80vmin;
+    width: 60vmin;
+    height: 60vmin;
     position: relative;
     overflow: hidden;
     border-radius: 10px;
